@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .range-info {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 2px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Performance Predictor</h2>
+        <form action="/predict" method="post">
+            <label for="study_hours_per_week">Study Hours per Week:</label>
+            <input type="number" step="0.1" name="study_hours_per_week" placeholder="e.g., 5 to 20" required>
+            <span class="range-info">Enter hours between 0 and 40.</span>
+
+            <label for="attendance_rate">Attendance Rate (%):</label>
+            <input type="number" step="0.1" name="attendance_rate" placeholder="e.g., 80 to 100" required>
+            <span class="range-info">Enter percentage between 0 and 100.</span>
+
+            <label for="previous_exam_scores">Previous Exam Scores:</label>
+            <input type="number" step="0.1" name="previous_exam_scores" placeholder="e.g., 50 to 100" required>
+            <span class="range-info">Enter score between 0 and 100.</span>
+
+            <label for="assignments_completed">Assignments Completed:</label>
+            <input type="number" step="0.1" name="assignments_completed" placeholder="e.g., 10 to 15" required>
+            <span class="range-info">Enter number of assignments completed (0-20).</span>
+
+            <label for="extracurricular_participation">Extracurricular Participation:</label>
+            <input type="number" step="0.1" name="extracurricular_participation" placeholder="e.g., 0 to 10" required>
+            <span class="range-info">Enter a value between 0 (none) and 10 (very active).</span>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
